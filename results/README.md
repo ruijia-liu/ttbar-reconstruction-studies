@@ -1,4 +1,4 @@
-# Recorded validation results
+# Six-method correction comparison
 
 All methods use the same 260,190 events and the same physical predictions for every metric.
 
