@@ -1,0 +1,754 @@
+{
+  "description": "Original source paths are relative to the private research workspace, not installation paths. Hashes describe original and published bytes. This manifest records only archived original files and derived configuration files.",
+  "files": [
+    {
+      "source_relative_path": "transformer_sweep_20261109/run_trial.py",
+      "published_path": "experiments/transformer_sweep_20261109/run_trial.py",
+      "source_sha256": "49d53612b8b0317c20e34db55eaa216311e91fb13976557e4d62e917623ff2a2",
+      "published_sha256": "0f8b9fc7eaf99f6709f3aee0f1f7b454c4e9fe22973e952077c62c972e173da3",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "transformer_sweep_20261109/compare.py",
+      "published_path": "experiments/transformer_sweep_20261109/compare.py",
+      "source_sha256": "14cc08a17eae9a676b561f8ed2c799ace9fc1e593ac0f6544022d4e026ed5a1d",
+      "published_sha256": "6986bf2a2ba251f9e329730f9a23eee8838a14a9f4b438fb515e463bf50d3769",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "transformer_sweep_20261109/summarize_round.py",
+      "published_path": "experiments/transformer_sweep_20261109/summarize_round.py",
+      "source_sha256": "d831573e5f88141943a1b6157aa2a4ba3ff02ba75726dfe3eb7cb666cf7e17c1",
+      "published_sha256": "3e8bbec8d515e2efae236de5bf511f93faa85e735115306df9029b603f3f5b10",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "transformer_sweep_20261109/plot_round1.py",
+      "published_path": "experiments/transformer_sweep_20261109/plot_round1.py",
+      "source_sha256": "62e29e4377ab39f5d3fb9f1de205d9dcb7eb52fec59f3d76fe0c0132e29a06dd",
+      "published_sha256": "efd0e4e006b1cc1b9cbe26885828f781a242044fe315dc264761d98b1999fe5f",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "transformer_sweep_20261109/plot_readable_panels.py",
+      "published_path": "experiments/transformer_sweep_20261109/plot_readable_panels.py",
+      "source_sha256": "675139aab2810ad0566aae03959b76f9ba331cee959e4d6d3081d8c7e96df586",
+      "published_sha256": "7c7e6babb4f9e8ace49c7bfe2290605cf9599ba7de1082be9c04b40a90efa588",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "transformer_sweep_20261109/experiment_plan.json",
+      "published_path": "experiments/transformer_sweep_20261109/experiment_plan.json",
+      "source_sha256": "4dd50a4cf3c1c275c2beddf488d7b521c6fe2d9064709d30446b34e6dd108cb3",
+      "published_sha256": "4dd50a4cf3c1c275c2beddf488d7b521c6fe2d9064709d30446b34e6dd108cb3",
+      "transformation": "Sanitized original experiment plan. Preserved numerical settings and recorded hash checks; private filesystem paths replaced by external placeholders."
+    },
+    {
+      "source_relative_path": "transformer_sweep_20261109/experiment_plan.json",
+      "published_path": "configs/transformer_sweep_20261109.json",
+      "source_sha256": "4dd50a4cf3c1c275c2beddf488d7b521c6fe2d9064709d30446b34e6dd108cb3",
+      "published_sha256": "f4b687d88db804c46844bf0ae6a694c9f2b2e3b1c2eddbd8df9e10442dd03d1b",
+      "transformation": "Parameter-only view of sanitized plan; removed artifact checksums, historical metrics and run status."
+    },
+    {
+      "source_relative_path": "loss_sweep_20261110/run_trial.py",
+      "published_path": "experiments/loss_sweep_20261110/run_trial.py",
+      "source_sha256": "7a688cb3d2a286178d0eb0fab4adc993185337122c5b03bd76524e816ef3ac50",
+      "published_sha256": "2e226a62ec4ec69966bc8414b4f3141c39668b6de531f8883247d99369683278",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "loss_sweep_20261110/module.py",
+      "published_path": "experiments/loss_sweep_20261110/module.py",
+      "source_sha256": "c977a66c4c6109dfc9ab7b8aa960e9affe11c1caa66b437eb2bdf4449410c5ed",
+      "published_sha256": "99459403e562c5d589e0cc5ad2257b8e872f79a842aec9acfd7751c687533794",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "loss_sweep_20261110/losses.py",
+      "published_path": "experiments/loss_sweep_20261110/losses.py",
+      "source_sha256": "cbbfe1fb3164ff464cb08aa40a0c1f8e9029cf3709b7f19a5e7fd32389e43214",
+      "published_sha256": "ba587494c7831d103e0119326d58fe3dffc6c3ba6a3b6a53abc5236aed02a1d1",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "loss_sweep_20261110/test_losses.py",
+      "published_path": "experiments/loss_sweep_20261110/test_losses.py",
+      "source_sha256": "af1a6d6b9015715b989375e2e401e02f441001fba7654352094586e5a8abbb61",
+      "published_sha256": "ae30f7de73b49998654956d1c3e965ffce9fcb6e576ae7dae178da6f7e6727df",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "loss_sweep_20261110/analyze_results.py",
+      "published_path": "experiments/loss_sweep_20261110/analyze_results.py",
+      "source_sha256": "c760791a34b0666064ce82cbab1c27b58d23abcbb12bef79412ce0a3dbe5794d",
+      "published_sha256": "a6707627bcb3753a1587ce1745601511482f7c9639a65378150e278980a88e8c",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "loss_sweep_20261110/experiment_plan.json",
+      "published_path": "experiments/loss_sweep_20261110/experiment_plan.json",
+      "source_sha256": "145e7db4d32d0bd43185658375d89f49335cfbb79fc2cfc01dedef859545e8d4",
+      "published_sha256": "4cf84ce500f6af68915864427f46cddfaf59e3ba9e4df7f318be156ef3d85b25",
+      "transformation": "Sanitized original experiment plan. Preserved numerical settings and recorded hash checks; private filesystem paths replaced by external placeholders."
+    },
+    {
+      "source_relative_path": "loss_sweep_20261110/experiment_plan.json",
+      "published_path": "configs/loss_sweep_20261110.json",
+      "source_sha256": "145e7db4d32d0bd43185658375d89f49335cfbb79fc2cfc01dedef859545e8d4",
+      "published_sha256": "a1586d4fec11b7a9f8a3a9caac1ae8867a88e84a3c80a2b734f2f8de55031d7f",
+      "transformation": "Parameter-only view of sanitized plan; removed artifact checksums, historical metrics and run status."
+    },
+    {
+      "source_relative_path": "agent_sweep_20261111/run_trial.py",
+      "published_path": "experiments/agent_sweep_20261111/run_trial.py",
+      "source_sha256": "83e23d00e32c75f474119bceee54951194cf968624b6078043f55320d2e0abb1",
+      "published_sha256": "a7f017bed321ff74c56c437782085f9b999f02225bbcfd52373040d4d4792928",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "agent_sweep_20261111/module.py",
+      "published_path": "experiments/agent_sweep_20261111/module.py",
+      "source_sha256": "e9df530eb3c3949ce7e86a234c451319041cc7f033d58fee818bf1bfd3311446",
+      "published_sha256": "b56a626fe3b34725044a06e0000d790fec1ca12e9f0f157b948283239e1a54b3",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "agent_sweep_20261111/gate_model.py",
+      "published_path": "experiments/agent_sweep_20261111/gate_model.py",
+      "source_sha256": "1ac19b54c6812f00909ba11638214e86f9cb998b3c6ccc58cf8697d1b6d429e4",
+      "published_sha256": "24fe858d3ccc78ef1796c9c4cc5ab197dee9c27c59ce2ee1f6699ffb9b1b51f3",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "agent_sweep_20261111/gated_loss.py",
+      "published_path": "experiments/agent_sweep_20261111/gated_loss.py",
+      "source_sha256": "832bc664902f5d5949df9deda92c0721f634d6fe1c91140e8453a9a82e6d233b",
+      "published_sha256": "0ba318c484d81ea9fbb6e617ca97310ad922806fb138673ef9df0f31833a9c7d",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "agent_sweep_20261111/train_gate.py",
+      "published_path": "experiments/agent_sweep_20261111/train_gate.py",
+      "source_sha256": "c4d4390ecc370fc510680bccb97d08e0f487e4bcb9e3167c952611f14024dbe9",
+      "published_sha256": "e3a715f5e4204a748f11ed53ef3ea3569862ecf7e2b92bca584fc84c90c30879",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "agent_sweep_20261111/test_gated_loss.py",
+      "published_path": "experiments/agent_sweep_20261111/test_gated_loss.py",
+      "source_sha256": "41f318f7a274deabf20eab08c22f6a26a0839ba21863fab4a2aba71519d52997",
+      "published_sha256": "5bb1957cac3ae19838859f8542d71cee1fc7fff4e27f2710e31297b65702f67d",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "agent_sweep_20261111/analyze_results.py",
+      "published_path": "experiments/agent_sweep_20261111/analyze_results.py",
+      "source_sha256": "e3410b7cc054fbf95d1e529e7fe45aad41c7b6bfdd44724ae9811d9129ee044f",
+      "published_sha256": "ba06d1e7e942e8e960156ab65804b57085efb1d37c1a13dc937c1ef24013f53b",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "agent_sweep_20261111/experiment_plan.json",
+      "published_path": "experiments/agent_sweep_20261111/experiment_plan.json",
+      "source_sha256": "9b15807f561df36c5b6fed97569162ebce1d2d3811776a7755812899afdcfacc",
+      "published_sha256": "3664992efc73cfa2c0d4c0c6e0e88a17a61fe0ee9119ce9cb1920f12ae4c92b6",
+      "transformation": "Sanitized original experiment plan. Preserved numerical settings and recorded hash checks; private filesystem paths replaced by external placeholders."
+    },
+    {
+      "source_relative_path": "agent_sweep_20261111/experiment_plan.json",
+      "published_path": "configs/agent_sweep_20261111.json",
+      "source_sha256": "9b15807f561df36c5b6fed97569162ebce1d2d3811776a7755812899afdcfacc",
+      "published_sha256": "f170900fdfc4dc2dd70026cf88812d98f7674144709383dcf400a830a9dabef6",
+      "transformation": "Parameter-only view of sanitized plan; removed artifact checksums, historical metrics and run status."
+    },
+    {
+      "source_relative_path": "probabilistic_sweep_20261111_retry2/cache_features.py",
+      "published_path": "experiments/probabilistic_sweep_20261111_retry2/cache_features.py",
+      "source_sha256": "5e29b8f52720d14edbe204c754ba2c2cc9023447b685c1635797da5ad2994cb2",
+      "published_sha256": "1e637d0c07cfe1963e14ac9783f883d81bfcd1a1fd81c605c011d4e0f9559521",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "probabilistic_sweep_20261111_retry2/density_heads.py",
+      "published_path": "experiments/probabilistic_sweep_20261111_retry2/density_heads.py",
+      "source_sha256": "5a2e9e8f656986d17efdc96701044c75c2281d02d30be5724e557834ecce79c1",
+      "published_sha256": "f95a99565bd807e4fa4c46709224fa5defb8dc98931e84c03c313d7f6080e7e0",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "probabilistic_sweep_20261111_retry2/evaluate_density.py",
+      "published_path": "experiments/probabilistic_sweep_20261111_retry2/evaluate_density.py",
+      "source_sha256": "622b2fe3d712c2a960479d09efab155f86cf6405d5da6f5a2eacc2b0137c6808",
+      "published_sha256": "9b531dddf44205722abf569f3369de786916c8c0579974082a553314f35429b0",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "probabilistic_sweep_20261111_retry2/run_density.py",
+      "published_path": "experiments/probabilistic_sweep_20261111_retry2/run_density.py",
+      "source_sha256": "b66dec446e06ef205f55f5bf5ce8d3317e39ced90f6705093d6b84c1f548dccc",
+      "published_sha256": "6219805a0c68402b940f74bbbf9c71fa2acba992bb691df13a7c508cf3785862",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "probabilistic_sweep_20261111_retry2/test_cache_contract.py",
+      "published_path": "experiments/probabilistic_sweep_20261111_retry2/test_cache_contract.py",
+      "source_sha256": "bf04772604d2b663b05e91ec3f96df439ca9c5e2cf5be26a30e45afce0724745",
+      "published_sha256": "ec1acf5e1e17ebf9e3354931912df3976d0e29cbf3dd2647c98b6e245caa45c4",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "probabilistic_sweep_20261111_retry2/test_density_heads.py",
+      "published_path": "experiments/probabilistic_sweep_20261111_retry2/test_density_heads.py",
+      "source_sha256": "5bf653e965e4f582b34a9bca22f0b56085b37ab73047a493b9eca215d883a4d5",
+      "published_sha256": "0e4131a3188e9fa34f0f980d2cfb29192ee6d174fd57ec3a24772610c557dbe8",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "probabilistic_sweep_20261111_retry2/test_prediction_export.py",
+      "published_path": "experiments/probabilistic_sweep_20261111_retry2/test_prediction_export.py",
+      "source_sha256": "43f621809be7173f189899b4a6e539400beb307e22dfd4803c2e3fca0bbe9498",
+      "published_sha256": "25e223a8e1f99c22a9b7d021c5a6d6b4d9d58477388ee03faca7657af6b482f5",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "probabilistic_sweep_20261111_retry2/experiment_plan.json",
+      "published_path": "experiments/probabilistic_sweep_20261111_retry2/experiment_plan.json",
+      "source_sha256": "c9659637ebe93d612a6aa9b73afb24b06f91476b6b7c0f17280e9067d4484eff",
+      "published_sha256": "df8c656b973e3235e7288440462a4c78a0dbc8f885b072b5ce72873f8b622e34",
+      "transformation": "Sanitized original experiment plan. Preserved numerical settings and recorded hash checks; private filesystem paths replaced by external placeholders."
+    },
+    {
+      "source_relative_path": "probabilistic_sweep_20261111_retry2/experiment_plan.json",
+      "published_path": "configs/probabilistic_sweep_20261111_retry2.json",
+      "source_sha256": "c9659637ebe93d612a6aa9b73afb24b06f91476b6b7c0f17280e9067d4484eff",
+      "published_sha256": "5b123a9f5a2b8907883469335fbdc91489053523668bc5a6cb637bec8e222c05",
+      "transformation": "Parameter-only view of sanitized plan; removed artifact checksums, historical metrics and run status."
+    },
+    {
+      "source_relative_path": "mixture_scan_20261112/analyze_mixture.py",
+      "published_path": "experiments/mixture_scan_20261112/analyze_mixture.py",
+      "source_sha256": "0694d7bc4524634baa8b765cb396c56b6123430caf59cbdd4f5116e00a6b2b52",
+      "published_sha256": "5d7237f6db272dc79be8b0aa44b473b1284623ca3735d016cb66640b3f8253ad",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "objective_sweep_20261112/adaptive_loss.py",
+      "published_path": "experiments/objective_sweep_20261112/adaptive_loss.py",
+      "source_sha256": "ab3f74e15197d5f8f68a72eba00f7f1e5a017373a831567ceefef12739b7061d",
+      "published_sha256": "2331e2b15bcfcf57cb56e1caf9ddde93eb4523cf9f8cbc8c95bd44c754eb2241",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "objective_sweep_20261112/adaptive_sources.txt",
+      "published_path": "experiments/objective_sweep_20261112/adaptive_sources.txt",
+      "source_sha256": "2ae33eecbaa37ea89f5227dc36c26e6ee8079a4eeea933ab58bcf2ac7b57a9d7",
+      "published_sha256": "2ae33eecbaa37ea89f5227dc36c26e6ee8079a4eeea933ab58bcf2ac7b57a9d7",
+      "transformation": "Unmodified project asset or attribution text."
+    },
+    {
+      "source_relative_path": "objective_sweep_20261112/barron_partition.npz",
+      "published_path": "experiments/objective_sweep_20261112/barron_partition.npz",
+      "source_sha256": "e2494859bd6eb548431133b88304f79f098607a55ef800fb81a9667cf902258a",
+      "published_sha256": "e2494859bd6eb548431133b88304f79f098607a55ef800fb81a9667cf902258a",
+      "transformation": "Unmodified project asset or attribution text."
+    },
+    {
+      "source_relative_path": "objective_sweep_20261112/evaluation.py",
+      "published_path": "experiments/objective_sweep_20261112/evaluation.py",
+      "source_sha256": "633fb8752f7218d8c1e89674024fbc6713b8a7c1e60b23dedcf12568d201d712",
+      "published_sha256": "c7b7ea354f39fb15385a8491a52f870962a1a1f048f6c381790493d99735fc52",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "objective_sweep_20261112/losses.py",
+      "published_path": "experiments/objective_sweep_20261112/losses.py",
+      "source_sha256": "cbbfe1fb3164ff464cb08aa40a0c1f8e9029cf3709b7f19a5e7fd32389e43214",
+      "published_sha256": "ba587494c7831d103e0119326d58fe3dffc6c3ba6a3b6a53abc5236aed02a1d1",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "objective_sweep_20261112/migration_loss.py",
+      "published_path": "experiments/objective_sweep_20261112/migration_loss.py",
+      "source_sha256": "aa84ddac7fd62cdcd1e8a8cf448f608208f2e32d5154d54b26af3c907b1c9fb4",
+      "published_sha256": "d026a0839b4aa35491459ba50f0c4708ebc34b07918340f9a7dae951004c064f",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "objective_sweep_20261112/module.py",
+      "published_path": "experiments/objective_sweep_20261112/module.py",
+      "source_sha256": "c6eb33a4426df52270d2196cb85eb2e59017ec7d922573dfe0d2e97ce7d11503",
+      "published_sha256": "5edbeba82e59ec8e9bd34f190ccd0c34fa0b93ccc2c09aa64cce119f1d16402e",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "objective_sweep_20261112/run_trial.py",
+      "published_path": "experiments/objective_sweep_20261112/run_trial.py",
+      "source_sha256": "20fd5016866162462d551a80c110d3873ac45f1e5c2e66089aa3bbc5568a12d2",
+      "published_sha256": "20fd5016866162462d551a80c110d3873ac45f1e5c2e66089aa3bbc5568a12d2",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "objective_sweep_20261112/training_control.py",
+      "published_path": "experiments/objective_sweep_20261112/training_control.py",
+      "source_sha256": "adb58d576744d0fb4a23fa3ce6d2c35a9d1a814fa2a6617700520195108ec5b6",
+      "published_sha256": "77af2acc27ec3997f324103d501cf4a55b5693f63caaad2840a9924ff4d70282",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "objective_sweep_20261112/test_adaptive_loss.py",
+      "published_path": "experiments/objective_sweep_20261112/test_adaptive_loss.py",
+      "source_sha256": "191757dabb69ce7c892479394d45520df9dd3d05b371942f7c42f23e7f2bac9c",
+      "published_sha256": "ad5abbe9f9891de224a40de51aef4845ce2a7abbe388b4b11bbc38a79ed9d419",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "objective_sweep_20261112/test_evaluation.py",
+      "published_path": "experiments/objective_sweep_20261112/test_evaluation.py",
+      "source_sha256": "b1b9e8c7403382681f321b4fc99352138794cbec3395eb395c1e5ce1509c127c",
+      "published_sha256": "9cb9aacf04097b897c93678ad21538052eb6ef25d218cbb85fdc1c27289e54aa",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "objective_sweep_20261112/test_losses.py",
+      "published_path": "experiments/objective_sweep_20261112/test_losses.py",
+      "source_sha256": "af1a6d6b9015715b989375e2e401e02f441001fba7654352094586e5a8abbb61",
+      "published_sha256": "ae30f7de73b49998654956d1c3e965ffce9fcb6e576ae7dae178da6f7e6727df",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "objective_sweep_20261112/test_migration_loss.py",
+      "published_path": "experiments/objective_sweep_20261112/test_migration_loss.py",
+      "source_sha256": "3c4e19aa56405201c2f8252bc008996c5bd7f6055bf25683d656b8b6a7d4d895",
+      "published_sha256": "3cef113fde053cc818049ac350bfcd344d038d562223f33c3df7b509168505e4",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "objective_sweep_20261112/test_training_control.py",
+      "published_path": "experiments/objective_sweep_20261112/test_training_control.py",
+      "source_sha256": "d205bd0bf9692f54b5f809de77764b509eec4e0d3fa90fd5e4c2b2bf00540461",
+      "published_sha256": "c2ee311f426482ddf6a9d7fcae190be2f737f19c7f2543780b191aa94e1a202a",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "objective_sweep_20261112/experiment_plan.json",
+      "published_path": "experiments/objective_sweep_20261112/experiment_plan.json",
+      "source_sha256": "5572c4b864eff31a41cc0ce5a8e2adfa6d64bf1acf3735b791920dc0bcdfe0db",
+      "published_sha256": "9300c961296d337af884bbe56f5024a340bcd4c087414d7dd23fe0f0510c55fa",
+      "transformation": "Sanitized original experiment plan. Preserved numerical settings and recorded hash checks; private filesystem paths replaced by external placeholders."
+    },
+    {
+      "source_relative_path": "objective_sweep_20261112/experiment_plan.json",
+      "published_path": "configs/objective_sweep_20261112.json",
+      "source_sha256": "5572c4b864eff31a41cc0ce5a8e2adfa6d64bf1acf3735b791920dc0bcdfe0db",
+      "published_sha256": "b3ad690ee10d35179151506178fca8d3fa0e0a3ef0889d6b44dbd0636cae9d55",
+      "transformation": "Parameter-only view of sanitized plan; removed artifact checksums, historical metrics and run status."
+    },
+    {
+      "source_relative_path": "structure_sweep_20261112/aux_dataset.py",
+      "published_path": "experiments/structure_sweep_20261112/aux_dataset.py",
+      "source_sha256": "4e31f3f31d9ce146a2e6a1b711fb1bc24ffc2bcf7806ea0b2339d08b817bc322",
+      "published_sha256": "68952bc1edefe92bec418a55597ec50de372f9360ccb69093e4e3c8b06d3d441",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "structure_sweep_20261112/evaluation.py",
+      "published_path": "experiments/structure_sweep_20261112/evaluation.py",
+      "source_sha256": "633fb8752f7218d8c1e89674024fbc6713b8a7c1e60b23dedcf12568d201d712",
+      "published_sha256": "c7b7ea354f39fb15385a8491a52f870962a1a1f048f6c381790493d99735fc52",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "structure_sweep_20261112/losses.py",
+      "published_path": "experiments/structure_sweep_20261112/losses.py",
+      "source_sha256": "cbbfe1fb3164ff464cb08aa40a0c1f8e9029cf3709b7f19a5e7fd32389e43214",
+      "published_sha256": "ba587494c7831d103e0119326d58fe3dffc6c3ba6a3b6a53abc5236aed02a1d1",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "structure_sweep_20261112/models.py",
+      "published_path": "experiments/structure_sweep_20261112/models.py",
+      "source_sha256": "83fa2ef3210583a811b9a5441be84954e4d63f0e7200ea8e45cfbea63c26b0b8",
+      "published_sha256": "1b09b57c44fbeb122e34085ed43941e0cd859dacc0672d914f992ebb5db46d76",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "structure_sweep_20261112/module.py",
+      "published_path": "experiments/structure_sweep_20261112/module.py",
+      "source_sha256": "4b4fb3b93d1acc5088834adcf7c2d886ac6fed97c4d312ed930496f02a5f6bd1",
+      "published_sha256": "9fcc3866fe5d3c55f8d609d8da6ec3ccca5eb024115f8e08e6b565940b606021",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "structure_sweep_20261112/physics_aux.py",
+      "published_path": "experiments/structure_sweep_20261112/physics_aux.py",
+      "source_sha256": "fe5d18bc9579b9fec1f3f230779ce2d728a6ebfd377a63f7b342b7e71ed25106",
+      "published_sha256": "e2516c7e6035921cd87cf94f99a83ea72d8242dda320cd68f17f61269c661275",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "structure_sweep_20261112/run_trial.py",
+      "published_path": "experiments/structure_sweep_20261112/run_trial.py",
+      "source_sha256": "b1bd47f4b80129e4b2e93ff349d9079ff44cff169433a9a5cfe501fdac1ecf80",
+      "published_sha256": "b1bd47f4b80129e4b2e93ff349d9079ff44cff169433a9a5cfe501fdac1ecf80",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "structure_sweep_20261112/training_control.py",
+      "published_path": "experiments/structure_sweep_20261112/training_control.py",
+      "source_sha256": "adb58d576744d0fb4a23fa3ce6d2c35a9d1a814fa2a6617700520195108ec5b6",
+      "published_sha256": "77af2acc27ec3997f324103d501cf4a55b5693f63caaad2840a9924ff4d70282",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "structure_sweep_20261112/test_aux_dataset.py",
+      "published_path": "experiments/structure_sweep_20261112/test_aux_dataset.py",
+      "source_sha256": "4911a1f5282ff8e6724b97395b0b3e2054f3eb65454a5fa3257e95aae90dacab",
+      "published_sha256": "85de39963449b3ec464ce34c03ae85d56d2e76a7114c1bd60e4e08808cfe8c27",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "structure_sweep_20261112/test_evaluation.py",
+      "published_path": "experiments/structure_sweep_20261112/test_evaluation.py",
+      "source_sha256": "b1b9e8c7403382681f321b4fc99352138794cbec3395eb395c1e5ce1509c127c",
+      "published_sha256": "9cb9aacf04097b897c93678ad21538052eb6ef25d218cbb85fdc1c27289e54aa",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "structure_sweep_20261112/test_losses.py",
+      "published_path": "experiments/structure_sweep_20261112/test_losses.py",
+      "source_sha256": "af1a6d6b9015715b989375e2e401e02f441001fba7654352094586e5a8abbb61",
+      "published_sha256": "ae30f7de73b49998654956d1c3e965ffce9fcb6e576ae7dae178da6f7e6727df",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "structure_sweep_20261112/test_models.py",
+      "published_path": "experiments/structure_sweep_20261112/test_models.py",
+      "source_sha256": "6f61b9e4718db025d483205c1e45a6435b75023d6e264468f16eaf5cf0a61af1",
+      "published_sha256": "0b5901e988b462c5f2e261d301f75b190cd948039e2dad2b7cdada04fcc21a80",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "structure_sweep_20261112/test_physics_aux.py",
+      "published_path": "experiments/structure_sweep_20261112/test_physics_aux.py",
+      "source_sha256": "8f579c9445242f84ed7e0fbbd0730f434b8957863357d2eba4dadc5e9f32b847",
+      "published_sha256": "df4580cbca7704bc8992daf787597e28e1d72bcfd267312537b501278d5f37a8",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "structure_sweep_20261112/test_training_control.py",
+      "published_path": "experiments/structure_sweep_20261112/test_training_control.py",
+      "source_sha256": "d205bd0bf9692f54b5f809de77764b509eec4e0d3fa90fd5e4c2b2bf00540461",
+      "published_sha256": "c2ee311f426482ddf6a9d7fcae190be2f737f19c7f2543780b191aa94e1a202a",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "structure_sweep_20261112/experiment_plan.json",
+      "published_path": "experiments/structure_sweep_20261112/experiment_plan.json",
+      "source_sha256": "f7e8ca725f47a824d76e97bd8ca54f0615210cd3b7961c62c9571d14dbbf8224",
+      "published_sha256": "8cce05fd6ccc114d5e061a676fd1e55ea1628df1551c46546c3d5be8d97ffd62",
+      "transformation": "Sanitized original experiment plan. Preserved numerical settings and recorded hash checks; private filesystem paths replaced by external placeholders."
+    },
+    {
+      "source_relative_path": "structure_sweep_20261112/experiment_plan.json",
+      "published_path": "configs/structure_sweep_20261112.json",
+      "source_sha256": "f7e8ca725f47a824d76e97bd8ca54f0615210cd3b7961c62c9571d14dbbf8224",
+      "published_sha256": "79a927d0ab306c31dfb4ef6903a8daa5a19e0078b303a217613e43a852f1555b",
+      "transformation": "Parameter-only view of sanitized plan; removed artifact checksums, historical metrics and run status."
+    },
+    {
+      "source_relative_path": "methods_sweep_20261112/analyze_results.py",
+      "published_path": "experiments/methods_sweep_20261112/analyze_results.py",
+      "source_sha256": "8965bd4de0a3999d022133af5a826522a87f919516d972e8e6713777c2f7e0c4",
+      "published_sha256": "6fb01779071f21c5c0d8c655f85c8843f59987f9f1ceced2e7cf632557dee1c2",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "methods_sweep_20261112/analyze_sensitivity.py",
+      "published_path": "experiments/methods_sweep_20261112/analyze_sensitivity.py",
+      "source_sha256": "a07601a35b7168a7a6292c0f827113766aa2d1ef707d27e1ccbdddb3194c6a7e",
+      "published_sha256": "fc609f9910bfacb98070d658d79964673b6b1cbb2dbe7694d6636590cf080893",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "methods_sweep_20261112/cache_contract.py",
+      "published_path": "experiments/methods_sweep_20261112/cache_contract.py",
+      "source_sha256": "622b2fe3d712c2a960479d09efab155f86cf6405d5da6f5a2eacc2b0137c6808",
+      "published_sha256": "9b531dddf44205722abf569f3369de786916c8c0579974082a553314f35429b0",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "methods_sweep_20261112/common.py",
+      "published_path": "experiments/methods_sweep_20261112/common.py",
+      "source_sha256": "6b39d819ab8b1e0bb89d38fe4006250aa68a61333499db53a630db052e600617",
+      "published_sha256": "24a423ba645b97b53d797a3741eeeb2d96fdf34700f09534606e12c9e0700998",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "methods_sweep_20261112/evaluation.py",
+      "published_path": "experiments/methods_sweep_20261112/evaluation.py",
+      "source_sha256": "633fb8752f7218d8c1e89674024fbc6713b8a7c1e60b23dedcf12568d201d712",
+      "published_sha256": "c7b7ea354f39fb15385a8491a52f870962a1a1f048f6c381790493d99735fc52",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "methods_sweep_20261112/flowalign.py",
+      "published_path": "experiments/methods_sweep_20261112/flowalign.py",
+      "source_sha256": "6db1f52f490b95a9d77c2ce25c640d6090fc1cbf211244b6fe316432e2d282b7",
+      "published_sha256": "9bfb3296b044444415f50236a1616b6154613c95defdd39e219bc29252e187ed",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "methods_sweep_20261112/method_sources.txt",
+      "published_path": "experiments/methods_sweep_20261112/method_sources.txt",
+      "source_sha256": "5ac489c0c137fadb01dcf90d070d34aa064932ebe3f7418526a346a1e8515f31",
+      "published_sha256": "5ac489c0c137fadb01dcf90d070d34aa064932ebe3f7418526a346a1e8515f31",
+      "transformation": "Unmodified project asset or attribution text."
+    },
+    {
+      "source_relative_path": "methods_sweep_20261112/ot_proxy.py",
+      "published_path": "experiments/methods_sweep_20261112/ot_proxy.py",
+      "source_sha256": "96d2f0f32c15000993f29bdebbc1de5a83125d621cf755fa3f77ee6250e03557",
+      "published_sha256": "21a786b1a2fc6c717cc9ff1ac4a56292ae9fa4d75e6423bf8cafd99a8942adb4",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "methods_sweep_20261112/plot_comparison.py",
+      "published_path": "experiments/methods_sweep_20261112/plot_comparison.py",
+      "source_sha256": "e4715bbc26dabedf02a0627ec9dc55db40f0395f1b65a2bbdb91aa065221706c",
+      "published_sha256": "b0c04e92ad5557126244d2756cbb15b638348f6b56ca2748a290604c7e3cc7f7",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "methods_sweep_20261112/plot_cot_distributions.py",
+      "published_path": "experiments/methods_sweep_20261112/plot_cot_distributions.py",
+      "source_sha256": "0e52dac1e72687bda80526fc8f8e07cc659e472cac4e9f52990a9654ce899441",
+      "published_sha256": "abb84bcbaf65fec5145e27de20dd00f2d0708630d782bc4866c1cf5ad06481ac",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "methods_sweep_20261112/prepare_data.py",
+      "published_path": "experiments/methods_sweep_20261112/prepare_data.py",
+      "source_sha256": "edc71170ca32df92594684d90c42da0ac38a9638541741a175c1d48e239142ec",
+      "published_sha256": "05246e8fd36adc70b95f5166d0ed57aa6c1f21db194b517f031e12d1e0ba1c12",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "methods_sweep_20261112/ranksim.py",
+      "published_path": "experiments/methods_sweep_20261112/ranksim.py",
+      "source_sha256": "5243b72ae8b0bd85f0f74a67822dbd586aa27abb9979c1e563fb6ff20fad107b",
+      "published_sha256": "012b0d7613180a00ee6fccaf4fcc066f56b1f0b0e02ba358f90fe5ddde7f0706",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "methods_sweep_20261112/run_trial.py",
+      "published_path": "experiments/methods_sweep_20261112/run_trial.py",
+      "source_sha256": "4e68cee716924041a3d42cd243d8a33b17e737d0aa6aad82c0536a58bfbda8db",
+      "published_sha256": "caca00b3db1ec07da3441ca64b9bd5fb78e9a77fda25b6a4196a5a86fc3c02f0",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "methods_sweep_20261112/test_common.py",
+      "published_path": "experiments/methods_sweep_20261112/test_common.py",
+      "source_sha256": "01cdbd45964b236c885cfd816984b34ba3bc0b3e6e31d3424809c810ed4429f0",
+      "published_sha256": "dbf7966ed07d96a3b8caf1cd1206c7059a69a377af33047745e761e6336e5274",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "methods_sweep_20261112/test_ot_proxy.py",
+      "published_path": "experiments/methods_sweep_20261112/test_ot_proxy.py",
+      "source_sha256": "227ab31636925e1535f257ed98b25ed11a23bd7f51c474b02f24453921b73577",
+      "published_sha256": "6c9d39fc9ca24ed97436beb4a640cc6c54c478c9778788d3516fe06f10c57c15",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "methods_sweep_20261112/test_special_methods.py",
+      "published_path": "experiments/methods_sweep_20261112/test_special_methods.py",
+      "source_sha256": "1795e02d615adf30986fcafde82a5e54e9e984d76efade43c6a965fa8ec52797",
+      "published_sha256": "9b6256c6ac9208ea773bc4ddf2535dd59ef8838299b187ed04810bd2f61b2d45",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "methods_sweep_20261112/train_field.py",
+      "published_path": "experiments/methods_sweep_20261112/train_field.py",
+      "source_sha256": "d292973954a5062449c7b7a43b55d3fc3c9643c26468d89b9de23b54fe8874c8",
+      "published_sha256": "3f73474e74d23a5f42175d047023dfe21aeae1efc1238f3f260c196dd3c55716",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "methods_sweep_20261112/experiment_plan.json",
+      "published_path": "experiments/methods_sweep_20261112/experiment_plan.json",
+      "source_sha256": "fa28aa3d2f91890b6e3f8e68d10a70f5ebcf764c9cdfc5d1114a23f23379307a",
+      "published_sha256": "2aec3124770e046bbd978ef7a901e5e1c62c68ab749a970edb5e8ff7a138da5a",
+      "transformation": "Sanitized original experiment plan. Preserved numerical settings and recorded hash checks; private filesystem paths replaced by external placeholders."
+    },
+    {
+      "source_relative_path": "methods_sweep_20261112/experiment_plan.json",
+      "published_path": "configs/methods_sweep_20261112.json",
+      "source_sha256": "fa28aa3d2f91890b6e3f8e68d10a70f5ebcf764c9cdfc5d1114a23f23379307a",
+      "published_sha256": "34b2c9a346b6eb3d99456b381f3d620c38e116114f0590a41f17d856ddd5777e",
+      "transformation": "Parameter-only view of sanitized plan; removed artifact checksums, historical metrics and run status."
+    },
+    {
+      "source_relative_path": "paper_target_20261111/audit_existing.py",
+      "published_path": "experiments/paper_target_20261111/audit_existing.py",
+      "source_sha256": "45f060acde73c18402b26592edb1a47b9564f9daa70fd47d219d5307835c44c4",
+      "published_sha256": "8e6bf3467d4394223162139288199700577a4223170dfb9eb17a82ff6f27afd6",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "paper_target_20261111/evaluation_protocol.json",
+      "published_path": "experiments/paper_target_20261111/evaluation_protocol.json",
+      "source_sha256": "454937cad63c45a3886652493947f5bf183ab333a48631ca939c490c1c100ce8",
+      "published_sha256": "de35afe2241401ac5729c80ed0082a4f2ad8d574f784849327c375630d4030d0",
+      "transformation": "Sanitized filesystem/account path metadata; numerical settings retained."
+    },
+    {
+      "source_relative_path": "本轮新结果_20261109/04_代码/hepsetreg_tools/evaluate_vyper_validation.py",
+      "published_path": "experiments/vyper_reproduction/evaluate_vyper_validation.py",
+      "source_sha256": "a3b49f144da34da9ba19a7328a32632a9022c3b0d9fcd9de6ea79c7062f73d60",
+      "published_sha256": "7a272543603925e7216a1762bcc155a1c6bbd652f0fc34927ca61734b96a871b",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "本轮新结果_20261109/04_代码/hepsetreg_tools/plot_vyper_validation_results.py",
+      "published_path": "experiments/vyper_reproduction/plot_vyper_validation_results.py",
+      "source_sha256": "2c65bdf083bc5fd2b7bbd053572d6d3a906b5c5213d2c217a5303d1ed6b7e113",
+      "published_sha256": "e1aa757bea77953ba7215fe6c24810c3ffedb1e8e364e7cf5fcbc02b33ca0db0",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "本轮新结果_20261109/04_代码/hepsetreg_tools/predict_vyper_validation.py",
+      "published_path": "experiments/vyper_reproduction/predict_vyper_validation.py",
+      "source_sha256": "106dfa5e71263f8734e553e8040bf132bd467699014f5dcaa016a7d8968ecb58",
+      "published_sha256": "7414d0f8599997d947250f69fb6c679462485746a09cb6ee86cb446ddfe05e8c",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "本轮新结果_20261109/04_代码/hepsetreg_tools/prepare_vyper_full.py",
+      "published_path": "experiments/vyper_reproduction/prepare_vyper_full.py",
+      "source_sha256": "99384ee2a6ebffb66f39903bfe513fa0c995505d3e538c1ed4d801a92382b552",
+      "published_sha256": "ecdfe1cdc05e3eb46ed9817d47bf7a238e1e96b04459acedc6a66e7aa497785f",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "本轮新结果_20261109/04_代码/hepsetreg_tools/smoke_vyper_full.py",
+      "published_path": "experiments/vyper_reproduction/smoke_vyper_full.py",
+      "source_sha256": "5cbf7d708c61518737af65366eacb76deee41b1cb6afa7b80083c36756597f47",
+      "published_sha256": "dc1a5f066b0515e65be7997de0f94b832b280826e26406dcb1d18e15491a3b5e",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "本轮新结果_20261109/04_代码/hepsetreg_tools/train_vyper_full_100.py",
+      "published_path": "experiments/vyper_reproduction/train_vyper_full_100.py",
+      "source_sha256": "a59e561ef423b458514115e0dd603210f0125410b51fc98b1d3c3064b2cae991",
+      "published_sha256": "d9fc380833cfbcd15a40a6bb95fbe653233e56bae24961d6bad74c6a46447abd",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "本轮新结果_20261109/04_代码/hepsetreg_tools/train_vyper_full.py",
+      "published_path": "experiments/vyper_reproduction/train_vyper_full.py",
+      "source_sha256": "ddc87cf280a41494cc3bbf969cb8444a73467a8b45440bd3308751af28735732",
+      "published_sha256": "90e89ebaa19bdf5e8e2bef3fe95825fa3072f3f31fa8c39e6e7d22a955a52d71",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "本轮新结果_20261109/04_代码/hepsetreg_tools/benchmark_20261027/part_slot_audit/slot_four_observables.py",
+      "published_path": "experiments/vyper_reproduction/benchmark_20261027/part_slot_audit/slot_four_observables.py",
+      "source_sha256": "5efba09ef17e8c7f066811eeab2f1f2d592ce2784964888b51eb768720d084f0",
+      "published_sha256": "eef48da2b235eb83bf2fa4330931fb085f1f5c64a28c1d29a210e6bda3184b1b",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "PHYS30881 S5 Project/hepsetreg_tools/compare_ttbar_validation.py",
+      "published_path": "experiments/initial_regression/compare_ttbar_validation.py",
+      "source_sha256": "941326691feddc05ed1e61b781b9b5e13edbcd62dea015c1b8df99d241f4011e",
+      "published_sha256": "f8d27f6b7c9b59c8c2a04098b2fbc766d4313b1ecd745eeebc326ea7af72d3b8",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "PHYS30881 S5 Project/hepsetreg_tools/fix_ttbar_dtype.py",
+      "published_path": "experiments/initial_regression/fix_ttbar_dtype.py",
+      "source_sha256": "34058ca8726b99d13aa4a4d72369ce93cefce89c16bdb86601b056baf2805507",
+      "published_sha256": "b12c414738bdc24dca812b0bc54d4d5be8ce00f51efe701d1d79de89b4321fd9",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "PHYS30881 S5 Project/hepsetreg_tools/plot_ttbar_comparison.py",
+      "published_path": "experiments/initial_regression/plot_ttbar_comparison.py",
+      "source_sha256": "6c11ff78f95a7bc3ea5a56561a8db38b842ceb2a9f6897240f77c5330561c762",
+      "published_sha256": "c1f9651a170b8b3a95e86b080c32b4b77e5895381457b4485704c068fb40f722",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "PHYS30881 S5 Project/hepsetreg_tools/plot_ttbar_four.py",
+      "published_path": "experiments/initial_regression/plot_ttbar_four.py",
+      "source_sha256": "93afd1f596fb47d994da032efb2cedb3e6299a373d08d74d4189d9758cd1d5d2",
+      "published_sha256": "daa5f3e4384399f09a2f361a6a3a4ad44fd89eaf01c923630e4b3279d4ec4341",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "PHYS30881 S5 Project/hepsetreg_tools/predict_ttbar_validation.py",
+      "published_path": "experiments/initial_regression/predict_ttbar_validation.py",
+      "source_sha256": "ce7d021f8d03ccc36ba89725db8755f93286d026f77df44860892321acf2c88b",
+      "published_sha256": "f612244cb53371dc5bae9e837933dd77aca28b84a779ba4fa9b56dfc79a1a457",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "PHYS30881 S5 Project/hepsetreg_tools/prepare_ttbar_four.py",
+      "published_path": "experiments/initial_regression/prepare_ttbar_four.py",
+      "source_sha256": "4642912d86429bc0d4d418dfbd5d800b7508a2208333647ed09117b3a9d90d77",
+      "published_sha256": "4eddd4e83be3c40b5e75e01d681dca8a60bc7039e7013201c51e0146668fd33d",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "PHYS30881 S5 Project/hepsetreg_tools/test_compare_ttbar_validation.py",
+      "published_path": "experiments/initial_regression/test_compare_ttbar_validation.py",
+      "source_sha256": "c09db95412c667f08fda20909f5b8dab418e338ea0e8dda8960a5c6b0abc9af1",
+      "published_sha256": "08278e7f4cb19eaeacddde0eb5cd9f5664074af500df7972171baecf4b987196",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "PHYS30881 S5 Project/hepsetreg_tools/test_prepare_ttbar_four.py",
+      "published_path": "experiments/initial_regression/test_prepare_ttbar_four.py",
+      "source_sha256": "c37f877de2f5718967afd09db1b404c0996984b9cbd847601399066828585d8c",
+      "published_sha256": "dad46d541920e0954cc9828f0905c2438373259bc74173a5bd9a0b185ee2d73a",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "PHYS30881 S5 Project/hepsetreg_tools/test_ttbar_dtype.py",
+      "published_path": "experiments/initial_regression/test_ttbar_dtype.py",
+      "source_sha256": "2d73f375996e4ddd92cc67a71fa38fcc979505da7e5a0a88d018e7cf528a027d",
+      "published_sha256": "2b7b2f844601c2b027902f46a5d6231e03226ed01e5d06475019489c01b17f9f",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "PHYS30881 S5 Project/hepsetreg_tools/test_ttbar_experiment_setup.py",
+      "published_path": "experiments/initial_regression/test_ttbar_experiment_setup.py",
+      "source_sha256": "5e90bb23a4d4742c5b699818a495d51b043e31ed70d30c5cc968a21e5785a9eb",
+      "published_sha256": "caf06c07e789a35894f6331e1d2f97811b70700cd81074ccdd6db352a2ba351b",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "PHYS30881 S5 Project/hepsetreg_tools/test_ttbar_metrics.py",
+      "published_path": "experiments/initial_regression/test_ttbar_metrics.py",
+      "source_sha256": "8658bc77e4d1d4d80b1090520f3a38c57c260f078b917018d4b17df1dd79f98d",
+      "published_sha256": "777c3f136033f7ac209ff517e5e8a26e77f90ebc505988a0762f68f3d8af4911",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "PHYS30881 S5 Project/hepsetreg_tools/train_ttbar_four.py",
+      "published_path": "experiments/initial_regression/train_ttbar_four.py",
+      "source_sha256": "9dd5852707136532843cf3ec53449af57e5a984f9a27cf8d43524886916c3838",
+      "published_sha256": "8b710a79546682704e449efec81612fe0047693e84b0ecaade03dbb9ccde1d26",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    },
+    {
+      "source_relative_path": "PHYS30881 S5 Project/hepsetreg_tools/ttbar_metrics.py",
+      "published_path": "experiments/initial_regression/ttbar_metrics.py",
+      "source_sha256": "143078e5d0ab018401f1c41d544ff4c1eb20549e68f0c3a6f8665a2e62dcbe24",
+      "published_sha256": "1ae7f27cae88cf0249cd869727a7b0d636581a7c6833b8570db36254aba6014e",
+      "transformation": "Removed workstation-specific dependency search paths; replaced home scratch defaults with RECO_DATA_ROOT where present. Algorithms and existing notices retained."
+    }
+  ]
+}

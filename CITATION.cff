@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "Please cite this repository and the relevant method papers when using this code."
+title: "Dileptonic top-pair reconstruction studies"
+type: software
+authors:
+  - family-names: Liu
+    given-names: Ruijia
+version: 0.1.0
+date-released: 2026-11-16
+repository-code: "https://github.com/ruijia-liu/ttbar-reconstruction-studies"

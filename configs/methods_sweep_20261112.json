@@ -1,0 +1,141 @@
+{
+  "experiment": "methods_sweep_20261112",
+  "design": "Six controlled deterministic correction-head trials on one verified frozen Huber+EMD encoder",
+  "train_rows": 4692288,
+  "val_rows": 260190,
+  "full_data": true,
+  "test_evaluation": false,
+  "source_cache": "external/probabilistic_sweep_20261111/cache",
+  "trace_bins": {
+    "ttbar_mass": [
+      300,
+      380,
+      440,
+      500,
+      750,
+      2000
+    ],
+    "delta_abs_y": [
+      -2.4,
+      -1,
+      -0.5,
+      0,
+      0.5,
+      1,
+      2.4
+    ],
+    "cos_K_plus": [
+      -1,
+      -0.5,
+      0,
+      0.5,
+      1
+    ],
+    "cos_phi": [
+      -1,
+      -0.5,
+      0,
+      0.5,
+      1
+    ]
+  },
+  "seed": 42,
+  "batch_size": 8192,
+  "learning_rate": 0.0003,
+  "weight_decay": 0.0001,
+  "max_epochs": 200,
+  "job_walltime_minutes": 30,
+  "training_and_setup_budget_minutes": 22,
+  "checkpoint_selection": "Among complete full-train/full-val epochs: prefer all 8 Res/Trace nonworse than historical Huber+EMD, then minimum mean log W1 ratio; if none eligible, minimum mean 12 log metric ratios. Retain MSE-best separately for historical comparison.",
+  "correction": "Two trainable128-unit SiLU layers; zero-initialized4-output head; delta_z=0.5*tanh(raw); add to exact existing physical prediction",
+  "frozen_encoder": true,
+  "condition_dim": 132,
+  "group_quantiles": [
+    0.6,
+    0.9
+  ],
+  "group_definition": "Fixed full-train baseline predicted mass tertypes: bottom60%, next30%, highest10%; no truth routing or movement between groups",
+  "common_objective": "2*Huber(delta1)+0.1*marginal EMD on original standardized targets",
+  "cot": {
+    "weight": 0.1,
+    "projections": 32,
+    "seed": 4201,
+    "loss": "Training-group-weighted32-direction joint slicedW2 squared; not a learned optimal Monge-map implementation"
+  },
+  "proxy": {
+    "dual_lr": 1.0,
+    "dual_cap": 100.0,
+    "tolerance": 0.0,
+    "residual_temperature": 0.05,
+    "update": "Once per complete training epoch using sample-weighted online hard violations",
+    "description": "Proxy-based projected primal-dual adaptation: true TRAIN macroTrace and two signed-tail rates update12multipliers; differentiable proxies update model; not exact Cotter game or guaranteed deterministic feasibility"
+  },
+  "ranksim": {
+    "weight": 0.01,
+    "pair_subset_per_batch": 256,
+    "target": "true standardized mass",
+    "lambda_val": 2.0,
+    "scope": "Only trainable correction-head representation; original Transformer embedding frozen"
+  },
+  "flowalign": {
+    "weight": 0.1,
+    "hidden": 128,
+    "sigma": 0.05,
+    "seed": 4207,
+    "max_epochs": 200,
+    "description": "Fresh paired conditional velocity field on4D original standardized target paths; frozen field used only in correction training, direct deterministic inference"
+  },
+  "runs": [
+    {
+      "run_id": "correction_control",
+      "ot": false,
+      "proxy": false,
+      "rank": false,
+      "flow": false
+    },
+    {
+      "run_id": "conditional_ot",
+      "ot": true,
+      "proxy": false,
+      "rank": false,
+      "flow": false
+    },
+    {
+      "run_id": "proxy_constraints",
+      "ot": false,
+      "proxy": true,
+      "rank": false,
+      "flow": false
+    },
+    {
+      "run_id": "conditional_ot_proxy",
+      "ot": true,
+      "proxy": true,
+      "rank": false,
+      "flow": false
+    },
+    {
+      "run_id": "ranksim",
+      "ot": false,
+      "proxy": false,
+      "rank": true,
+      "flow": false
+    },
+    {
+      "run_id": "flowalign",
+      "ot": false,
+      "proxy": false,
+      "rank": false,
+      "flow": true
+    }
+  ],
+  "limitations": [
+    "frozen encoder/head-only screening; not full retraining of original papers",
+    "single training seed",
+    "conditionalOT andproxyframework are task adaptations, not exact paper reproductions",
+    "same22min ceilings but completedepochs may differ",
+    "RankSim pairs use256rows/batch; all rows participate in main loss",
+    "FlowAlign has a separately budgeted field job; include its cost",
+    "train-derived references do not guarantee validation/test feasibility"
+  ]
+}

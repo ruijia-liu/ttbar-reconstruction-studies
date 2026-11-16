@@ -1,0 +1,66 @@
+METHOD PROVENANCE AND SCIENTIFIC LIMITS (2026-11-12)
+
+RankSim
+Paper: Yu Gong, Greg Mori, Fred Tung, RankSim: Ranking Similarity
+Regularization for Deep Imbalanced Regression, ICML 2022, PMLR 162:7634-7649.
+https://proceedings.mlr.press/v162/gong22a.html
+Official source: https://github.com/BorealisAI/ranksim-imbalanced-regression
+Ranking implementation:
+https://github.com/BorealisAI/ranksim-imbalanced-regression/blob/main/imdb-wiki-dir/ranking.py
+Auxiliary-loss algorithm: repository README RankSim example.
+Copyright (c) 2021-present, Royal Bank of Canada. All rights reserved.
+Source license: Creative Commons Attribution-NonCommercial-ShareAlike 4.0
+International (CC BY-NC-SA 4.0), with no warranties.
+https://github.com/BorealisAI/ranksim-imbalanced-regression/blob/main/LICENSE
+https://creativecommons.org/licenses/by-nc-sa/4.0/
+The adapted ranksim.py file carries that license. The official implementation
+credits Blackbox Differentiation of Combinatorial Solvers (Vlastelica et al.)
+and https://github.com/martius-lab/blackbox-backprop.
+
+Preserved: descending normalized ranks, cosine feature similarity, scalar
+target absolute-distance similarity, self-neighbors, interpolation lambda=2,
+black-box backward rule, and SUM of per-anchor mean squared rank errors.
+Adaptations: vectorized anchor calculation, caller-selected 256-row subset,
+deterministic first sampled representative per duplicate target instead of
+Python random.choice, float32 loss arithmetic, differentiable zero when fewer
+than two distinct targets exist. Pairwise target masses are training labels.
+The supervised point loss still uses every row. The ranked representation
+must be the trainable correction head representation, not frozen cache data.
+This auxiliary uses mass alone; it does not directly optimize the other three
+observables, migration diagonals, or a detector-resolution metric.
+
+FlowAlign
+Paper: Ruizhi Yuan, Zeqiu Yu, Wei Gao, Wei Chen, Xiwei Tang, Lu Tang,
+Flow-Guided Target-Space Alignment via Path Consistency, arXiv:2611.09863v1,
+6 November 2026. https://arxiv.org/html/2611.09863v1
+Official project: https://github.com/yrzzz/FlowAlign
+flowalign.py is an independent implementation of the equations, not copied
+project source. It implements conditional flow-matching field training
+(equation 2) and frozen-field path consistency (equation 3).
+
+Stage 1: start=base_z+0.05*Normal(0,I), t~Uniform(0,1),
+point=(1-t)*start+t*target_z, desired_velocity=target_z-start.
+Train the field on paired TRAIN data. Full validation field MSE may choose
+the stage-1 checkpoint; test labels must not be used for fitting or selection.
+Stage 2: substitute the trainable candidate pred_z for target_z. Freeze field
+parameters while differentiating through field inputs back to pred_z.
+One independently sampled path per event per step; private explicit generator.
+Coordinate MSE averages over four outputs, equivalent to the paper's squared
+Euclidean norm up to a constant factor of four.
+
+Adaptation: the field is conditioned on a fixed 132-dimensional detector-side
+cache, whereas path start/end live in the four original standardized physical
+outputs z. The start is centered on the existing Huber+EMD prediction. This
+separates conditioning from the path's four-dimensional starting point;
+it is not a reproduction of the paper's original modality benchmarks.
+No previous RealNVP or log/atanh-space model is reused as the velocity field.
+No ODE solve, ground-truth input, or stochastic flow sample is used at inference.
+
+Both methods are exploratory transferred objectives. A short single-seed,
+time-budget-matched correction-head study cannot establish superiority over
+the VYPER paper, originality of the source algorithms, or equal-convergence
+performance. FlowAlign's endpoint and geometry arguments depend on field
+quality/regularity; held-out field error and downstream validation metrics
+must be inspected. Evaluate all four observables with the same event IDs,
+binning, resolution convention, migration normalization and distribution
+metrics before declaring a winner. Hold the test set for final evaluation.

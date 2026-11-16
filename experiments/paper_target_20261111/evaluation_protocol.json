@@ -1,0 +1,136 @@
+{
+  "status": "research_target_confirmed; evaluation_details_pending_verification",
+  "created": "2026-11-11",
+  "scope": "Four high-level observables in dileptonic ttbar: improve resolution and migration while preserving distribution agreement",
+  "observables": [
+    "ttbar_mass",
+    "delta_abs_y",
+    "cos_K_plus",
+    "cos_phi"
+  ],
+  "paper": {
+    "url": "https://arxiv.org/html/2609.18928v1",
+    "table": "V",
+    "train_events": 4692288,
+    "validation_events": 260190,
+    "test_events": 261557,
+    "vyper_reference": {
+      "ttbar_mass": {
+        "trace": 0.52,
+        "resolution": 136.0,
+        "resolution_unit": "GeV"
+      },
+      "delta_abs_y": {
+        "trace": 0.619,
+        "resolution": 0.812
+      },
+      "cos_K_plus": {
+        "trace": 0.579,
+        "resolution": 0.635
+      },
+      "cos_phi": {
+        "trace": 0.593,
+        "resolution": 0.619
+      }
+    },
+    "additional_comparators": [
+      "EM with VyPER assignment",
+      "nu2-flows"
+    ],
+    "qualification": "Published rounded test values are contextual reference values, not a paired statistical baseline for our validation predictions."
+  },
+  "primary_target": {
+    "resolution": "q(0.8413, prediction - truth) - q(0.1587, prediction - truth); full width; lower is better",
+    "trace": "Mean diagonal of a truth-row-normalized response matrix; higher is better; exact paper bins and flow treatment must be verified",
+    "ambition": "Improve both metrics on each of the four observables against a verified paper-compatible VyPER baseline",
+    "same_output_requirement": "The output rule used to claim better resolution/trace must also be evaluated for shape; metrics from different prediction rules cannot be combined into one simultaneous-improvement claim."
+  },
+  "distribution_checks": {
+    "parton_truth": [
+      "Wasserstein-1 for each observable",
+      "joint standardized sliced Wasserstein distance",
+      "conditional distributions in mass regions",
+      "bias and tail errors"
+    ],
+    "idealized_reconstruction": "Paper Fig. 5 uses a different reference: true assignments and neutrinos with reconstructed visible objects. Evaluate separately when this reference is available.",
+    "shape_noninferiority_tolerances": null,
+    "tolerance_policy": "Choose and document physically meaningful tolerances using training/validation information before evaluating the held-out test set; do not pick tolerances after seeing test results."
+  },
+  "prediction_rules": {
+    "deterministic": "One observable vector per event; report all metrics on this vector",
+    "generative_single_draw": "One reproducibly seeded draw per event; report resolution, trace, and shape on these same predictions; repeat inference seeds to quantify sampling variability",
+    "generative_multi_draw": "Derive observables for each draw first, then report per-observable means and medians separately with their own resolution, trace, and shape; compare VyPER using the same sample count and summary rule",
+    "full_posterior_shape": "If pooling samples, each event has total weight one; label this separately from point-estimate shape",
+    "sample_count": null,
+    "paper_samples_per_event": "Not yet established; 200 diffusion steps is not a count of independent samples."
+  },
+  "data_integrity": {
+    "train_sha256": "5317a849d25b0b721b33ab9e8b0ee5bf44709238b589ebeeb6ac21b0262e9bd2",
+    "validation_sha256": "da630904b6c91a8afefe5a4fa96a0fd8a9eaac537b3e7f975efdca31eecc28ff",
+    "canonical_validation_npz_sha256": "8cab939641f4a45fd79e5fa107229ee8b31f51097a573e42967ae55a1b0e83b8",
+    "requirements": [
+      "Verify split separation and hashes",
+      "Verify row alignment and field order",
+      "Use matching physical input information",
+      "Freeze helicity-axis and boost conventions",
+      "Keep the test set out of model and hyperparameter selection"
+    ]
+  },
+  "comparison_status": {
+    "existing_predictions": "Validation, single training seed, heterogeneous training and checkpoint selection; suitable for screening",
+    "existing_vyper": "Release configuration, epoch 97, one draw/event, not an exact paper reproduction",
+    "paper_bins_verified": false,
+    "verified_paper_figure6_bins": {
+      "ttbar_mass": [
+        300,
+        380,
+        440,
+        500,
+        750,
+        2000
+      ],
+      "cos_phi": [
+        -1,
+        -0.5,
+        0,
+        0.5,
+        1
+      ]
+    },
+    "unverified_paper_bins": [
+      "delta_abs_y",
+      "cos_K_plus"
+    ],
+    "paper_overflow_verified": false,
+    "paper_quantile_interpolation_verified": false,
+    "paper_analysis_repository": "https://github.com/els285/VyPERpaper returned 404; unavailable for implementation verification",
+    "helicity_convention_reconciled": false,
+    "paper_compatible_baseline_available": false,
+    "independent_test_evaluated": false
+  },
+  "next_experiment": {
+    "status": "design_only; no new Slurm jobs submitted",
+    "purpose": "Test whether a conditional residual distribution repairs shape compression around an accurate point predictor",
+    "common_base": "A verified existing full-data deterministic checkpoint; freeze the encoder and point head for the initial density-head comparison",
+    "arms": [
+      "Existing deterministic point predictions",
+      "Conditional Gaussian residual head",
+      "Conditional four-dimensional normalizing-flow residual head"
+    ],
+    "controls": [
+      "Identical frozen base and conditioning features",
+      "Identical data splits and preprocessing",
+      "No target or truth-region input at inference",
+      "Identical inference sample counts and summary rules",
+      "Respect bounded angular support without post-hoc clipping",
+      "Predeclare checkpoint selection using validation metrics"
+    ],
+    "full_training_data": true,
+    "screening_slurm_minutes_per_job": 30,
+    "training_budget_minutes_per_job": 22,
+    "cost_accounting": "Count frozen-base training, feature caching, head fitting, and inference separately; do not describe head-only cost as total method cost",
+    "later_stage": "Validate the best candidate with adequate training and at least three training seeds before a frozen test comparison; report paired event uncertainty and training-seed variability separately",
+    "agent_route": "Retain as an optional later ablation; current mass-loss gate is not the main proposed improvement."
+  },
+  "claim_policy": "Scope any improvement to these four ttbar observables and the evaluated output rule. Do not generalize to assignment, neutrino reconstruction, all physics channels, or a fully reproduced paper unless separately demonstrated."
+}

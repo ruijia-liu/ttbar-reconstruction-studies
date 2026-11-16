@@ -1,0 +1,685 @@
+{
+  "design": "Same initial Transformer backbone and point head; true two-expert output routing and physical top-pair auxiliary reconstruction",
+  "train_rows": 4692288,
+  "val_rows": 260190,
+  "full_data": true,
+  "test_evaluation": false,
+  "job_walltime_minutes": 30,
+  "training_and_setup_budget_minutes": 22,
+  "checkpoint_selection": "Among complete full-train/full-val epochs: prefer all 8 Res/Trace nonworse than historical Huber+EMD, then minimum mean log W1 ratio; if none eligible, minimum mean 12 log metric ratios. Retain MSE-best separately for historical comparison.",
+  "point_scale_convention": "MSE=r^2; 2*Huber_delta; 2*s^2*logcosh(r/s), averaged over events and outputs",
+  "shape_scale_convention": "mean W1 over four standardized marginals OR 32 fixed unit 4D projections; lambda is exploratory, not calibrated between metrics",
+  "canonical_source": "external/four_observables.parquet",
+  "canonical_source_sha256": "f66f6b921337dbdbb056b6d7911a9475289b0f0a3067ceb161e7e01668313574",
+  "canonical_npz_sha256": "8cab939641f4a45fd79e5fa107229ee8b31f51097a573e42967ae55a1b0e83b8",
+  "data_sha256": {
+    "train": "5317a849d25b0b721b33ab9e8b0ee5bf44709238b589ebeeb6ac21b0262e9bd2",
+    "val": "da630904b6c91a8afefe5a4fa96a0fd8a9eaac537b3e7f975efdca31eecc28ff"
+  },
+  "verified_source_sha256": {
+    "training/lightning_module.py": "2a2dec05622d3fcb44c8fc08aec880e3b06873fb0f236f3f40fc0135802a22bd",
+    "training/shape_module.py": "d19d060f563e9d4d8880adfeae3ee532525e1731913de5ff93437925f6020642",
+    "losses/shape_losses.py": "583688bda361af76aab90022a9054f2200911e606f53877661d2f06ca3e7aa06",
+    "losses/losses.py": "fb88e2338b504c414989b0169db9c7393fbf3a64cf127cc1cfd2a4b2a27ad374",
+    "datasets/EventDatasetBase.py": "fad18e83e18e557b9f7a2a6aff98570ae4fcff5dcb5f3a3c6d7e3028e5fd70b2",
+    "backbones/head.py": "9ccac7577cd580c4fd9c827bff15b47473f58c75fb341365efa47ecbe874855f",
+    "backbones/backbone.py": "990cc0ba49e8aa3ae99000ade27e54b98ca2cb431c9a693ac85e73b60d69653b"
+  },
+  "experiment": "structure_sweep_20261112",
+  "historical_baseline_artifact": {
+    "path": "external/loss_sweep_20261110/huber1_emd01/predictions_val.parquet",
+    "sha256": "80065d57affa5e070769d2b4e5a58e236675e04e84930a849855ece2c4a3bca6",
+    "bytes": 11016157
+  },
+  "baseline_metrics": {
+    "events": 260190,
+    "observables": {
+      "ttbar_mass": {
+        "n": 260190,
+        "res": 102.38312403564456,
+        "q1587": -53.55514118652344,
+        "q8413": 48.82798284912111,
+        "local_trace": 0.5780321266241971,
+        "mae": 46.86948527963583,
+        "rmse": 70.68414632336886,
+        "bias": -3.528439380550894,
+        "w1": 8.096885101565858,
+        "bin_edges": [
+          300,
+          380,
+          440,
+          500,
+          750,
+          2000
+        ],
+        "truth_bin_counts": [
+          26724,
+          64636,
+          53705,
+          93096,
+          21985
+        ],
+        "row_probabilities": [
+          [
+            0.34235144439455173,
+            0.6073941026792397,
+            0.042471186948061665,
+            0.007409070498428379,
+            0.000374195479718605
+          ],
+          [
+            0.07573179033356024,
+            0.6444396311652949,
+            0.24616312890649175,
+            0.033216783216783216,
+            0.0004486663778699177
+          ],
+          [
+            0.010278372591006424,
+            0.2609254259379946,
+            0.4512987617540266,
+            0.2768084908295317,
+            0.000688948887440648
+          ],
+          [
+            0.001299733608318295,
+            0.053020537939331445,
+            0.14075792730085074,
+            0.7635558992867577,
+            0.041365901864741775
+          ],
+          [
+            4.5485558335228565e-05,
+            0.0035933591084830567,
+            0.008960654992040027,
+            0.29884011826245166,
+            0.6885148965203548
+          ]
+        ],
+        "truth_outside": 44,
+        "prediction_outside_given_truth_bin": [
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      "delta_abs_y": {
+        "n": 260190,
+        "res": 0.6447091979126931,
+        "q1587": -0.3206788577462543,
+        "q8413": 0.3240303401664387,
+        "local_trace": 0.5664752214310376,
+        "mae": 0.2887400392826716,
+        "rmse": 0.4120362190563851,
+        "bias": 0.00128553762512441,
+        "w1": 0.05620685957132974,
+        "bin_edges": [
+          -2.4,
+          -1.0,
+          -0.5,
+          0.0,
+          0.5,
+          1.0,
+          2.4
+        ],
+        "truth_bin_counts": [
+          28539,
+          41047,
+          59855,
+          59903,
+          41466,
+          29220
+        ],
+        "row_probabilities": [
+          [
+            0.6390903675671887,
+            0.2554048845439574,
+            0.07218192648656224,
+            0.021058901853603842,
+            0.00897018115561162,
+            0.0032937383930761416
+          ],
+          [
+            0.11625697371306064,
+            0.5053962530757424,
+            0.2907642458644968,
+            0.07069944210295515,
+            0.01393524496309109,
+            0.0029478402806538844
+          ],
+          [
+            0.006816473143429955,
+            0.14989558098738617,
+            0.5497118035251859,
+            0.266377077938351,
+            0.02499373485924317,
+            0.002205329546403809
+          ],
+          [
+            0.0023538053185984007,
+            0.02457305977997763,
+            0.2543111363370783,
+            0.5560823331051867,
+            0.15530107006326896,
+            0.007378595395890022
+          ],
+          [
+            0.0032556793517580667,
+            0.015458447885014229,
+            0.06902040225727102,
+            0.2882361452756475,
+            0.5094535281917716,
+            0.1145757970385376
+          ],
+          [
+            0.005065023956194388,
+            0.009548254620123204,
+            0.020978781656399725,
+            0.07234770704996578,
+            0.25284052019164954,
+            0.6391170431211499
+          ]
+        ],
+        "truth_outside": 160,
+        "prediction_outside_given_truth_bin": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          3
+        ]
+      },
+      "cos_K_plus": {
+        "n": 260190,
+        "res": 0.49089075749973465,
+        "q1587": -0.24920299325586118,
+        "q8413": 0.24168776424387348,
+        "local_trace": 0.6397705532555195,
+        "mae": 0.2148167606477065,
+        "rmse": 0.30481758010982,
+        "bias": -0.010850837654803942,
+        "w1": 0.045503730256560355,
+        "bin_edges": [
+          -1.0,
+          -0.5,
+          0.0,
+          0.5,
+          1.0
+        ],
+        "truth_bin_counts": [
+          68377,
+          71527,
+          64488,
+          55798
+        ],
+        "row_probabilities": [
+          [
+            0.7479561840969917,
+            0.2147944484256402,
+            0.03354929289088436,
+            0.0035392017783757697
+          ],
+          [
+            0.1302025808435975,
+            0.619290617529045,
+            0.23258349993708669,
+            0.01792330169027081
+          ],
+          [
+            0.0190578092048133,
+            0.22038208658975314,
+            0.5804335690360998,
+            0.18012653516933383
+          ],
+          [
+            0.008226101293953188,
+            0.0673680060217212,
+            0.3130040503243844,
+            0.6114018423599412
+          ]
+        ],
+        "truth_outside": 0,
+        "prediction_outside_given_truth_bin": [
+          11,
+          0,
+          0,
+          0
+        ]
+      },
+      "cos_phi": {
+        "n": 260190,
+        "res": 0.4625607953741734,
+        "q1587": -0.2219565925667439,
+        "q8413": 0.24060420280742945,
+        "local_trace": 0.6660932148044705,
+        "mae": 0.20051806276843737,
+        "rmse": 0.2750439470809117,
+        "bias": 0.0054367818600015785,
+        "w1": 0.029133413684810563,
+        "bin_edges": [
+          -1.0,
+          -0.5,
+          0.0,
+          0.5,
+          1.0
+        ],
+        "truth_bin_counts": [
+          52003,
+          60066,
+          68739,
+          79382
+        ],
+        "row_probabilities": [
+          [
+            0.7559563871315117,
+            0.2210064803953618,
+            0.020152683499028903,
+            0.0028075303347883775
+          ],
+          [
+            0.13699930076915393,
+            0.5786135251223654,
+            0.25874870975260544,
+            0.025638464355875204
+          ],
+          [
+            0.018621161203974453,
+            0.17169292541352071,
+            0.5532667044909003,
+            0.25641920889160447
+          ],
+          [
+            0.002960368849361316,
+            0.02799123226928019,
+            0.19249955909400115,
+            0.7765362424731047
+          ]
+        ],
+        "truth_outside": 0,
+        "prediction_outside_given_truth_bin": [
+          4,
+          0,
+          0,
+          1
+        ]
+      }
+    },
+    "illegal_output_counts": {
+      "nonfinite": 0,
+      "mass_nonpositive": 0,
+      "cos_K_plus_outside": 11,
+      "cos_phi_outside": 5
+    },
+    "diagnostics": {
+      "correlations": {
+        "keys": [
+          "ttbar_mass",
+          "delta_abs_y",
+          "cos_K_plus",
+          "cos_phi"
+        ],
+        "truth": [
+          [
+            1.0,
+            -0.0007343068342380445,
+            -0.030538562925706923,
+            -0.10873104340140952
+          ],
+          [
+            -0.0007343068342380445,
+            0.9999999999999999,
+            -0.0561742632557387,
+            0.0004990368387851886
+          ],
+          [
+            -0.03053856292570692,
+            -0.0561742632557387,
+            1.0,
+            0.035381016667694706
+          ],
+          [
+            -0.10873104340140952,
+            0.0004990368387851887,
+            0.03538101666769471,
+            0.9999999999999998
+          ]
+        ],
+        "prediction": [
+          [
+            0.9999999999999998,
+            0.015528912646410284,
+            0.05333238523910585,
+            -0.13130347962168498
+          ],
+          [
+            0.015528912646410284,
+            1.0,
+            -0.018912175752939315,
+            0.005787662536650952
+          ],
+          [
+            0.05333238523910585,
+            -0.01891217575293931,
+            1.0,
+            -0.04639253041470367
+          ],
+          [
+            -0.13130347962168498,
+            0.005787662536650952,
+            -0.046392530414703675,
+            1.0
+          ]
+        ],
+        "truth_prediction": [
+          [
+            0.8986778090168712,
+            0.0037231184553205353,
+            0.06417299631217699,
+            -0.11627301355574471
+          ],
+          [
+            0.00839411198608319,
+            0.8584950320972972,
+            -0.024556673484940988,
+            -0.000881814911608511
+          ],
+          [
+            0.03505096329185664,
+            -0.01142254522986579,
+            0.8403978993926776,
+            -0.037563209469328306
+          ],
+          [
+            -0.12226023158953216,
+            0.007664565856717568,
+            -0.05326029247829663,
+            0.8801865581073445
+          ]
+        ],
+        "undefined_value": "null for zero-variance coordinates"
+      },
+      "mass_slices": {
+        "truth_mass_gt_800": {
+          "events": 16036,
+          "observables": {
+            "ttbar_mass": {
+              "n": 16036,
+              "res": 263.169714630127,
+              "mae": 123.40490295988688,
+              "rmse": 171.1556164182073,
+              "bias": -88.50489686093862,
+              "w1": 88.50489686093864
+            },
+            "delta_abs_y": {
+              "n": 16036,
+              "res": 0.49862570726504984,
+              "mae": 0.23022372482178277,
+              "rmse": 0.34145545179786446,
+              "bias": 0.007497557087192863,
+              "w1": 0.02949015640200691
+            },
+            "cos_K_plus": {
+              "n": 16036,
+              "res": 0.3929579065833503,
+              "mae": 0.1728124030710276,
+              "rmse": 0.2505353048221686,
+              "bias": 0.09576509776688075,
+              "w1": 0.10931515402777194
+            },
+            "cos_phi": {
+              "n": 16036,
+              "res": 0.4627896421392933,
+              "mae": 0.2041811696832385,
+              "rmse": 0.2846566292803906,
+              "bias": 0.019625994243447926,
+              "w1": 0.03046766487774222
+            }
+          }
+        },
+        "truth_mass_gt_1000": {
+          "events": 4812,
+          "observables": {
+            "ttbar_mass": {
+              "n": 4812,
+              "res": 332.2358166503906,
+              "mae": 170.35596563096652,
+              "rmse": 232.38838610120305,
+              "bias": -139.56732558252804,
+              "w1": 139.56732558252804
+            },
+            "delta_abs_y": {
+              "n": 4812,
+              "res": 0.48775072249807516,
+              "mae": 0.22576458322840157,
+              "rmse": 0.33404231840216986,
+              "bias": 0.018124979948762512,
+              "w1": 0.02670100133509088
+            },
+            "cos_K_plus": {
+              "n": 4812,
+              "res": 0.389779643176609,
+              "mae": 0.1791414320954165,
+              "rmse": 0.2611688033718028,
+              "bias": 0.11477010179574244,
+              "w1": 0.1261320151140348
+            },
+            "cos_phi": {
+              "n": 4812,
+              "res": 0.48297375048488955,
+              "mae": 0.21436356903369036,
+              "rmse": 0.29677352438939913,
+              "bias": 0.028824166218477616,
+              "w1": 0.03921705737675913
+            }
+          }
+        }
+      },
+      "note": "Tail groups use physical truth mass; no empty-bin local Trace is defined for these slices"
+    }
+  },
+  "expected_initial_model_sha256": "b63d2ae9c29324be66d8477c1c48e4a5d8744536d322503846545a4966c56cda",
+  "trace_bins": {
+    "ttbar_mass": [
+      300,
+      380,
+      440,
+      500,
+      750,
+      2000
+    ],
+    "delta_abs_y": [
+      -2.4,
+      -1,
+      -0.5,
+      0,
+      0.5,
+      1,
+      2.4
+    ],
+    "cos_K_plus": [
+      -1,
+      -0.5,
+      0,
+      0.5,
+      1
+    ],
+    "cos_phi": [
+      -1,
+      -0.5,
+      0,
+      0.5,
+      1
+    ]
+  },
+  "resolution_quantiles": [
+    0.1587,
+    0.8413
+  ],
+  "resolution_full_width": true,
+  "physical_prediction_clipping": false,
+  "trace_normalization": "Unweighted mean diagonal; truth-row denominators include predictions outside bin range",
+  "full_train_smoke_epochs": 1,
+  "max_epochs": 100,
+  "additional_diagnostics": [
+    "split each original bin in half",
+    "shift interior boundaries by 10% adjacent minimum width, preserve outer edges",
+    "mass tails >800 and >1000 GeV",
+    "physical support violations"
+  ],
+  "limitations": [
+    "single seed screening",
+    "full validation used for checkpoint selection; independent test remains untouched",
+    "equal wall-time ceilings; completed epochs/updates may differ",
+    "local Trace bin protocol is not yet fully matched to paper",
+    "primary checkpoint selection differs from historical MSE rule; export MSE-best separately",
+    "loss weights and bounded fixed-scale adaptive family are exploratory, not tuned optima",
+    "Additional model capacity and auxiliary supervision vary between baseline and proposed methods; fixed vs learned expert controls routing",
+    "Physics consistency covers mass/delta only; auxiliary learning may indirectly affect angular outputs",
+    "One initial loss-weight setting; no guarantee all metrics improve"
+  ],
+  "runs": [
+    {
+      "model": "regression",
+      "d_model": 128,
+      "num_layers": 3,
+      "nhead": 8,
+      "batch_size": 4096,
+      "learning_rate": 0.0003,
+      "dropout": 0.1,
+      "weight_decay": 0.01,
+      "schedule": "constant",
+      "emd_weight": 0.0,
+      "seed": 42,
+      "delta": 1.0,
+      "scale": 1.0,
+      "point_weight": 2.0,
+      "shape_kind": "emd",
+      "shape_weight": 0.1,
+      "run_id": "huber1_emd01_control",
+      "loss_kind": "huber",
+      "mode": "control",
+      "specialist_weight": 0.2,
+      "gate_weight": 0.05,
+      "physics_aux_weight": 0.2,
+      "physics_consistency_weight": 0.05
+    },
+    {
+      "model": "regression",
+      "d_model": 128,
+      "num_layers": 3,
+      "nhead": 8,
+      "batch_size": 4096,
+      "learning_rate": 0.0003,
+      "dropout": 0.1,
+      "weight_decay": 0.01,
+      "schedule": "constant",
+      "emd_weight": 0.0,
+      "seed": 42,
+      "delta": 1.0,
+      "scale": 1.0,
+      "point_weight": 2.0,
+      "shape_kind": "emd",
+      "shape_weight": 0.1,
+      "run_id": "experts_fixed",
+      "loss_kind": "huber",
+      "mode": "moe_fixed",
+      "specialist_weight": 0.2,
+      "gate_weight": 0.05,
+      "physics_aux_weight": 0.2,
+      "physics_consistency_weight": 0.05
+    },
+    {
+      "model": "regression",
+      "d_model": 128,
+      "num_layers": 3,
+      "nhead": 8,
+      "batch_size": 4096,
+      "learning_rate": 0.0003,
+      "dropout": 0.1,
+      "weight_decay": 0.01,
+      "schedule": "constant",
+      "emd_weight": 0.0,
+      "seed": 42,
+      "delta": 1.0,
+      "scale": 1.0,
+      "point_weight": 2.0,
+      "shape_kind": "emd",
+      "shape_weight": 0.1,
+      "run_id": "experts_learned",
+      "loss_kind": "huber",
+      "mode": "moe_learned",
+      "specialist_weight": 0.2,
+      "gate_weight": 0.05,
+      "physics_aux_weight": 0.2,
+      "physics_consistency_weight": 0.05
+    },
+    {
+      "model": "regression",
+      "d_model": 128,
+      "num_layers": 3,
+      "nhead": 8,
+      "batch_size": 4096,
+      "learning_rate": 0.0003,
+      "dropout": 0.1,
+      "weight_decay": 0.01,
+      "schedule": "constant",
+      "emd_weight": 0.0,
+      "seed": 42,
+      "delta": 1.0,
+      "scale": 1.0,
+      "point_weight": 2.0,
+      "shape_kind": "emd",
+      "shape_weight": 0.1,
+      "run_id": "physics_aux",
+      "loss_kind": "huber",
+      "mode": "physics",
+      "specialist_weight": 0.2,
+      "gate_weight": 0.05,
+      "physics_aux_weight": 0.2,
+      "physics_consistency_weight": 0.05
+    }
+  ],
+  "extra_labels": [
+    "training truth mass region >800GeV",
+    "training top/antitop four-vectors"
+  ],
+  "experts": {
+    "count": 2,
+    "shared_backbone": true,
+    "tail_threshold_gev": 800,
+    "initialization": "Two identical copies of base point head; conditional supervision specializes them",
+    "fixed_gate": "Full training tail prevalence",
+    "learned_gate": "sigmoid(reconstructed-input embedding MLP)",
+    "shared_aux_losses": "Both fixed and learned arms use identical conditional expert losses and router BCE",
+    "specialist_loss": "0.5*(mean(2Huber(core)*Icore)/(1-pi)+mean(2Huber(tail)*Itail)/pi)",
+    "gate_supervision": "unweighted BCE; training labels used only in losses",
+    "reported_diagnostics": [
+      "g mean/std/quantiles",
+      "g conditioned on truth mass region",
+      "expert separation",
+      "gate BCE"
+    ]
+  },
+  "physics": {
+    "auxiliary_coordinates": [
+      "top_px",
+      "top_py",
+      "top_pz",
+      "log_top_mass",
+      "antitop_px",
+      "antitop_py",
+      "antitop_pz",
+      "log_antitop_mass"
+    ],
+    "source": "Same hashed training/validation Parquet targets top/antitop px,py,pz,E",
+    "statistics": "Training split only; logmass std floor0.05",
+    "consistency": "Direct predicted mass and delta_abs_y vs quantities reconstructed from predicted future-timelike top/antitop vectors",
+    "angle_consistency": false,
+    "inference_truth_input": false
+  },
+  "parameters_initialization": "Base network seed42 and audited hash; new branch initialization in fork_rng with seed4206",
+  "extra_setup_cost": "All four arms read and validate the same auxiliary labels, fit training stats; included within22min budget"
+}

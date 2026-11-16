@@ -1,0 +1,164 @@
+{
+  "experiment": "probabilistic_sweep_20261111_retry2",
+  "design": "Same frozen ordinary Transformer + Huber(delta=1) + 0.1 EMD encoder/checkpoint; train two conditional joint density heads",
+  "base_run": "huber1_emd01",
+  "base_epoch": 46,
+  "base_artifacts": {
+    "checkpoint": {
+      "path": "external/loss_sweep_20261110/huber1_emd01/checkpoints/mse/epoch=46-val_mse=0.247797.ckpt",
+      "sha256": "99c11452ad4f416e4fb1dc6d1df1ef008be6e4c8f8db4244445d4d9a875faabb",
+      "bytes": 8188292
+    },
+    "stats": {
+      "path": "external/loss_sweep_20261110/huber1_emd01/stats.pt",
+      "sha256": "8d3069cbe1b17d5bb7b4f6479c9e7e49922c106cec2a42001d2875b0c88dcc4c",
+      "bytes": 2712
+    },
+    "status": {
+      "path": "external/loss_sweep_20261110/huber1_emd01/status.json",
+      "sha256": "773e396eac28b7605175d524e2b9fffb8ce35f4860354cecb44353348b1fef5b",
+      "bytes": 9866
+    },
+    "predictions": {
+      "path": "external/loss_sweep_20261110/huber1_emd01/predictions_val.parquet",
+      "sha256": "80065d57affa5e070769d2b4e5a58e236675e04e84930a849855ece2c4a3bca6",
+      "bytes": 11016157
+    }
+  },
+  "source_sha256": {
+    "backbones/head.py": "9ccac7577cd580c4fd9c827bff15b47473f58c75fb341365efa47ecbe874855f",
+    "backbones/backbone.py": "990cc0ba49e8aa3ae99000ade27e54b98ca2cb431c9a693ac85e73b60d69653b",
+    "datasets/EventDatasetBase.py": "fad18e83e18e557b9f7a2a6aff98570ae4fcff5dcb5f3a3c6d7e3028e5fd70b2"
+  },
+  "data_sha256": {
+    "train": "5317a849d25b0b721b33ab9e8b0ee5bf44709238b589ebeeb6ac21b0262e9bd2",
+    "val": "da630904b6c91a8afefe5a4fa96a0fd8a9eaac537b3e7f975efdca31eecc28ff"
+  },
+  "canonical_npz_sha256": "8cab939641f4a45fd79e5fa107229ee8b31f51097a573e42967ae55a1b0e83b8",
+  "train_rows": 4692288,
+  "val_rows": 260190,
+  "full_data": true,
+  "test_evaluation": false,
+  "frozen_encoder": true,
+  "base_precision": "bf16 autocast; same as saved reference predictions",
+  "density_precision": "float32",
+  "condition_dim": 132,
+  "hidden_dim": 128,
+  "num_layers": 6,
+  "anchor_last": false,
+  "condition": "128 frozen embedding features standardized with training statistics + 4 original point z-scores",
+  "target_transform": [
+    "log",
+    "identity",
+    "atanh",
+    "atanh"
+  ],
+  "atanh_epsilon": 1e-07,
+  "target_transform_fit": "full training targets only; physical truth kept unchanged for metrics",
+  "physical_prediction_clipping": false,
+  "seed": 42,
+  "learning_rate": 0.0003,
+  "weight_decay": 0.0001,
+  "batch_size": 8192,
+  "optimizer": "AdamW",
+  "training_objective": "negative joint log density in standardized transformed target space",
+  "job_walltime_minutes": 30,
+  "training_and_setup_budget_minutes": 22,
+  "max_epochs": 200,
+  "metric_every_epochs": 5,
+  "gradient_clip_norm": 5.0,
+  "single_draw_seed": 4203,
+  "posterior_seed": 4204,
+  "posterior_samples": 32,
+  "local_vyper_reference": {
+    "ttbar_mass": {
+      "res": 151.7596464469642,
+      "local_trace": 0.5069350003602195,
+      "w1": 15.485879779420152
+    },
+    "delta_abs_y": {
+      "res": 0.8428724749578909,
+      "local_trace": 0.5096623498124081,
+      "w1": 0.004050420157680298
+    },
+    "cos_K_plus": {
+      "res": 0.6710216816002228,
+      "local_trace": 0.5634945066168495,
+      "w1": 0.0309544278173656
+    },
+    "cos_phi": {
+      "res": 0.6477386371649155,
+      "local_trace": 0.5803174668695381,
+      "w1": 0.018026840006883912
+    }
+  },
+  "eligibility_rule": "Prefer candidates with all four Res <= local VyPER Res and all four local Trace >= local VyPER Trace; if none qualify, retain best-score candidate for diagnosis and label primary_eligible=false",
+  "checkpoint_selection": "eligible candidates first, then minimum validation mean of 12 log ratios: Res/baseRes, baseTrace/Trace, W1/baseW1, four observables; all metrics from the same fixed-seed single-draw prediction",
+  "selection_weights": "equal 1/12; exploratory geometric compromise, not a declaration of superiority or a paper metric",
+  "secondary_checkpoint": "minimum full-validation transformed-space NLL",
+  "resolution_quantiles": [
+    0.1587,
+    0.8413
+  ],
+  "resolution_full_width": true,
+  "trace_bins": {
+    "ttbar_mass": [
+      300,
+      380,
+      440,
+      500,
+      750,
+      2000
+    ],
+    "delta_abs_y": [
+      -2.4,
+      -1,
+      -0.5,
+      0,
+      0.5,
+      1,
+      2.4
+    ],
+    "cos_K_plus": [
+      -1,
+      -0.5,
+      0,
+      0.5,
+      1
+    ],
+    "cos_phi": [
+      -1,
+      -0.5,
+      0,
+      0.5,
+      1
+    ]
+  },
+  "trace_normalization": "all events in each truth bin, including out-of-range predictions; average diagonal, not event-weighted accuracy",
+  "paper_trace_protocol_fully_verified": false,
+  "reporting": [
+    "same single-draw set: Res, local Trace, W1, MAE, RMSE, bias",
+    "32-sample observable mean and median: each receives its own complete metric profile",
+    "pooled posterior: each event total weight one; report separately",
+    "baseline predictions rechecked against the original Huber+EMD file",
+    "full event counts, cache and checkpoint hashes, epochs, updates, GPU and elapsed time"
+  ],
+  "shared_cache_cost": "separate GPU stage, included in reported total method costs along with prior encoder training",
+  "smoke": "Both heads train one complete full-data epoch and evaluate all validation events; production blocked unless both pass",
+  "runs": [
+    {
+      "run_id": "gaussian",
+      "kind": "gaussian"
+    },
+    {
+      "run_id": "flow",
+      "kind": "flow"
+    }
+  ],
+  "limitations": [
+    "single training seed for screening",
+    "validation used for selection, no test claim",
+    "new heads do not by themselves establish originality or paper superiority",
+    "equal wall-time budgets, not equal epochs or parameter counts"
+  ]
+}

@@ -1,0 +1,39 @@
+Adaptive robust loss specification, checked 2026-11-12
+
+Primary paper:
+Jonathan T. Barron, A General and Adaptive Robust Loss Function, CVPR 2019.
+https://arxiv.org/abs/1701.03077
+https://openaccess.thecvf.com/content_CVPR_2019/html/Barron_A_General_and_Adaptive_Robust_Loss_Function_CVPR_2019_paper.html
+
+Author implementation verified through these primary files:
+https://raw.githubusercontent.com/jonbarron/robust_loss_pytorch/master/robust_loss_pytorch/general.py
+https://raw.githubusercontent.com/jonbarron/robust_loss_pytorch/master/robust_loss_pytorch/distribution.py
+No implementation code or upstream spline is copied into this experiment.
+
+This experiment uses rho(r,alpha,1)=(2-alpha)/alpha *
+expm1(alpha/2 * log1p(r^2/(2-alpha))) for alpha in (0.1,1.9).
+Z(alpha)=integral over R of exp(-rho(r,alpha,1)) dr.
+The learned objective is 2*mean(rho+logZ), plus the separately configured EMD.
+It includes the alpha-dependent normalizer; omitting that normalizer would
+reward simply lowering robustness penalties instead of fitting a likelihood.
+
+Four global alpha parameters, sigmoid-bounded, initial alpha=1.0.
+Scale c is fixed at 1 in standardized target units, not learned.
+The alpha=1 initial residual loss is pseudo-Huber, not the piecewise Huber
+baseline. Near zero the residual curvature is the same after multiplying by 2.
+The factor 2 weights an ordinary normalized NLL; it does not change the
+underlying density normalization or claim that exp(-2*NLL) is normalized.
+
+The partition table has 361 uniform knots including 0.1 and 1.9. Values and
+derivatives are independently calculated by SciPy adaptive quadrature over
+the entire positive half-line, exploiting symmetry. Runtime interpolation is
+cubic Hermite with precomputed float64 coefficients stored as float32 buffers.
+test_adaptive_loss.py --build-table reproducibly regenerates the table.
+Tests compare every knot and midpoint against full-domain quadrature, compare
+the alpha=1 special case against 2*e*K1(1), check alpha gradients against
+finite differences, and check checkpoint, local curvature, and mixed precision.
+
+This is a bounded shape-only variant of the published family, not the full
+upstream adaptive implementation (which can also learn scale). Treat any
+quality benefit as a hypothesis. Log learned alpha and tail performance;
+fixed scale and restricted alpha can themselves limit fit quality.

@@ -1,0 +1,157 @@
+{
+  "design": "Three loss-only end-to-end Transformer trials from identical initial weights; equal wall-time ceilings",
+  "train_rows": 4692288,
+  "val_rows": 260190,
+  "full_data": true,
+  "test_evaluation": false,
+  "job_walltime_minutes": 30,
+  "training_and_setup_budget_minutes": 22,
+  "checkpoint_selection": "Among complete full-train/full-val epochs: prefer all 8 Res/Trace nonworse than historical Huber+EMD, then minimum mean log W1 ratio; if none eligible, minimum mean 12 log metric ratios. Retain MSE-best separately for historical comparison.",
+  "point_scale_convention": "MSE=r^2; 2*Huber_delta; 2*s^2*logcosh(r/s), averaged over events and outputs",
+  "shape_scale_convention": "mean W1 over four standardized marginals OR 32 fixed unit 4D projections; lambda is exploratory, not calibrated between metrics",
+  "experiment": "objective_sweep_20261112",
+  "trace_bins": {
+    "ttbar_mass": [
+      300,
+      380,
+      440,
+      500,
+      750,
+      2000
+    ],
+    "delta_abs_y": [
+      -2.4,
+      -1,
+      -0.5,
+      0,
+      0.5,
+      1,
+      2.4
+    ],
+    "cos_K_plus": [
+      -1,
+      -0.5,
+      0,
+      0.5,
+      1
+    ],
+    "cos_phi": [
+      -1,
+      -0.5,
+      0,
+      0.5,
+      1
+    ]
+  },
+  "resolution_quantiles": [
+    0.1587,
+    0.8413
+  ],
+  "resolution_full_width": true,
+  "physical_prediction_clipping": false,
+  "trace_normalization": "Unweighted mean diagonal; truth-row denominators include predictions outside bin range",
+  "migration": {
+    "weight": 0.1,
+    "temperature_fraction": 0.1,
+    "max_weight_before_normalization": 5.0,
+    "training_only_weights": true,
+    "includes_underflow_overflow": true,
+    "loss": "Negative log logistic soft-bin probability for true bin; mean of training-frequency-balanced rows"
+  },
+  "adaptive": {
+    "alpha_bounds": [
+      0.1,
+      1.9
+    ],
+    "alpha_init": 1.0,
+    "fixed_scale": 1.0,
+    "dimensions": 4,
+    "parameter_learning_rate": 0.001,
+    "parameter_weight_decay": 0.0,
+    "loss": "2*(Barron rho + logZ(alpha)); c fixed at 1 standardized unit; alpha=1 is pseudo-Huber"
+  },
+  "full_train_smoke_epochs": 1,
+  "max_epochs": 100,
+  "additional_diagnostics": [
+    "split each original bin in half",
+    "shift interior boundaries by 10% adjacent minimum width, preserve outer edges",
+    "mass tails >800 and >1000 GeV",
+    "physical support violations"
+  ],
+  "limitations": [
+    "single seed screening",
+    "full validation used for checkpoint selection; independent test remains untouched",
+    "equal wall-time ceilings; completed epochs/updates may differ",
+    "local Trace bin protocol is not yet fully matched to paper",
+    "primary checkpoint selection differs from historical MSE rule; export MSE-best separately",
+    "loss weights and bounded fixed-scale adaptive family are exploratory, not tuned optima"
+  ],
+  "runs": [
+    {
+      "model": "regression",
+      "d_model": 128,
+      "num_layers": 3,
+      "nhead": 8,
+      "batch_size": 4096,
+      "learning_rate": 0.0003,
+      "dropout": 0.1,
+      "weight_decay": 0.01,
+      "schedule": "constant",
+      "emd_weight": 0.0,
+      "seed": 42,
+      "delta": 1.0,
+      "scale": 1.0,
+      "point_weight": 2.0,
+      "shape_kind": "emd",
+      "shape_weight": 0.1,
+      "run_id": "huber1_emd01_control",
+      "loss_kind": "huber",
+      "migration_weight": 0.0,
+      "adaptive": false
+    },
+    {
+      "model": "regression",
+      "d_model": 128,
+      "num_layers": 3,
+      "nhead": 8,
+      "batch_size": 4096,
+      "learning_rate": 0.0003,
+      "dropout": 0.1,
+      "weight_decay": 0.01,
+      "schedule": "constant",
+      "emd_weight": 0.0,
+      "seed": 42,
+      "delta": 1.0,
+      "scale": 1.0,
+      "point_weight": 2.0,
+      "shape_kind": "emd",
+      "shape_weight": 0.1,
+      "run_id": "huber1_emd01_migration01",
+      "loss_kind": "huber",
+      "migration_weight": 0.1,
+      "adaptive": false
+    },
+    {
+      "model": "regression",
+      "d_model": 128,
+      "num_layers": 3,
+      "nhead": 8,
+      "batch_size": 4096,
+      "learning_rate": 0.0003,
+      "dropout": 0.1,
+      "weight_decay": 0.01,
+      "schedule": "constant",
+      "emd_weight": 0.0,
+      "seed": 42,
+      "delta": 1.0,
+      "scale": 1.0,
+      "point_weight": 2.0,
+      "shape_kind": "emd",
+      "shape_weight": 0.1,
+      "run_id": "adaptive_emd01",
+      "loss_kind": "huber",
+      "migration_weight": 0.0,
+      "adaptive": true
+    }
+  ]
+}
